@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Me</title>
+  <!-- Favicon (GIF) -->
+  <link rel="icon" href="https://web.archive.org/web/20091027123839/http://geocities.com/Hollywood/Lot/7201/img_gusicoani.gif" type="image/gif">
+
   <style>
     body {
       background-image: url('https://web.archive.org/web/20091027090606/http://hk.geocities.com/poyu_popo/assets/black4.gif'); /* Example GIF URL */
@@ -29,11 +32,24 @@
     }
     .gif-container {
       margin: 30px 0;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     .gif {
       width: 200px;
       height: auto;
       margin: 10px;
+      cursor: pointer;
+    }
+    #newImage {
+      display: none; /* Initially hide the replacement image */
+      width: 200px;
+      height: auto;
+      margin: 10px;
+      position: absolute;
+      left: 10px; /* Position the new image to the left */
     }
     a {
       display: inline-block;
@@ -59,11 +75,41 @@
   </p>
 
   <div class="gif-container">
+    <!-- Additional GIFs beside the original image -->
     <img src="https://web.archive.org/web/20091026192755/http://geocities.com/blackxstar/starline2.gif" class="gif" alt="Spinning Eye GIF">
-    <img src="https://web.archive.org/web/20090821104628/http://geocities.com/CollegePark/Center/4833/anim_esc_med.gif" class="gif" alt="Blood Drop GIF">
+    
+    <!-- Original image that will stay when clicked -->
+    <img id="originalImage" src="https://web.archive.org/web/20090821104628/http://geocities.com/CollegePark/Center/4833/anim_esc_med.gif" class="gif" alt="Blood Drop GIF">
+    
+    <!-- Additional GIF on the right -->
     <img src="https://web.archive.org/web/20091026192755/http://geocities.com/blackxstar/starline2.gif" class="gif" alt="Spiral GIF">
+    
+    <!-- Replacement Image (Initially hidden) -->
+    <img id="newImage" src="https://preview.redd.it/t6lldk0v7dy61.jpg?width=180&format=pjpg&auto=webp&s=4b1ccf527a2ff05aa5b135943248ebba06661a3f" alt="Replacement Image">
   </div>
 
   <a href="index.html">Back to Home</a>
+
+  <audio controls>
+    <source src="C:\Users\caden\OneDrive\Desktop\Aritamatera\mmoustache.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    // Get references to the images
+    const originalImage = document.getElementById("originalImage");
+    const newImage = document.getElementById("newImage");
+
+    // Add click event to the original image
+    originalImage.addEventListener("click", function() {
+      // Show the replacement image on the left
+      newImage.style.display = "block";
+
+      // Set a timeout to hide the replacement image after 5 seconds
+      setTimeout(function() {
+        newImage.style.display = "none";  // Hide the replacement image
+      }, 5000);  // 5000 milliseconds = 5 seconds
+    });
+  </script>
 </body>
 </html>
