@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Death Of John Maker Yern</title>
+    <style>
+        body {
+            text-align: center;
+            background-image: url('https://web.archive.org/web/20091027082507/http://geocities.com/statelotto/blackbg.gif'); /* Replace with your actual background GIF */
+            background-repeat: repeat;
+            background-size: auto;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+        img {
+            max-width: 90%;
+            height: auto;
+            margin-top: 20px;
+        }
+        .button {
+            cursor: pointer;
+            width: 100px; /* Adjust button size as needed */
+            height: auto;
+            margin: 20px;
+        }
+        .top-button, .bottom-button {
+            display: inline-block;
+        }
+        .container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="font-family:comic sans ms;">Random Killing of The Images John Maker Yern</h1>
+<!-- Back to Home Page Button -->
+<div>
+    <a href="index.html">
+        <img src="https://web.archive.org/web/20090829060340/http://www.geocities.com/sheltiegraphics/MyHomebutton.gif" alt="Back to Home" class="button">
+    </a>
+</div>
+    <!-- Top Button -->
+    <div class="top-button">
+        <img src="https://web.archive.org/web/20090831123941/http://geocities.com/drugdealertje/deaddude.gif" alt="Show Random Image" class="button" onclick="showRandomImage()">
+    </div>
+
+    <!-- Random Image Display -->
+    <div class="container">
+        <img id="randomImage" src="" alt="Random Image">
+    </div>
+
+    <!-- Bottom Button -->
+    <div class="bottom-button">
+        <img src="https://web.archive.org/web/20091022212122/http://www.geocities.com/simontalksrubbish/random/rainbow.gif" alt="Show Random Image" class="button" onclick="showRandomImage()">
+    </div>
+
+    <script>
+        const images = [
+            'Images/image (1).gif',
+            'Images/image (1).jpeg',
+            'Images/image (1).jpg',
+            'Images/image (1).png',
+            'Images/image (10).jpg',
+            'Images/image (10).png',
+            'Images/image (11).jpg',
+            'Images/image (11).png',
+            'Images/image (12).jpg',
+            'Images/image (12).png',
+            'Images/image (13).jpg',
+            'Images/image (13).png',
+            'Images/image (14).jpg',
+            'Images/image (14).png',
+            'Images/image (15).jpg',
+            'Images/image (15).png',
+            'Images/image (16).jpg',
+            'Images/image (16).png',
+            'Images/image (17).jpg',
+            'Images/image (17).png',
+            'Images/image (18).jpg',
+            'Images/image (18).png',
+            'Images/image (19).jpg',
+            'Images/image (19).png',
+            'Images/image (2).gif',
+            'Images/image (2).jpg',
+            'Images/image (2).png',
+            'Images/image (20).jpg',
+            'Images/image (20).png',
+            'Images/image (21).jpg',
+            'Images/image (21).png',
+            'Images/image (22).jpg',
+            'Images/image (22).png',
+            'Images/image (23).jpg',
+            'Images/image (23).png',
+            'Images/image (24).jpg',
+            'Images/image (24).png',
+            'Images/image (25).jpg',
+            'Images/image (25).png',
+            'Images/image (26).jpg',
+            'Images/image (26).png',
+            'Images/image (27).jpg',
+            'Images/image (27).png',
+            'Images/image (28).jpg',
+            'Images/image (28).png',
+            'Images/image (29).jpg',
+            'Images/image (29).png',
+            'Images/image (3).jpg',
+            'Images/image (3).png',
+            'Images/image (30).jpg',
+            'Images/image (30).png',
+            'Images/image (31).png',
+            'Images/image (32).png',
+            'Images/image (33).png',
+            'Images/image (34).png',
+            'Images/image (35).png',
+            'Images/image (36).png',
+            'Images/image (37).png',
+            'Images/image (38).png',
+            'Images/image (39).png',
+            'Images/image (4).jpg',
+            'Images/image (4).png',
+            'Images/image (40).png',
+            'Images/image (41).png',
+            'Images/image (42).png',
+            'Images/image (43).png',
+            'Images/image (44).png',
+            'Images/image (45).png',
+            'Images/image (5).jpg',
+            'Images/image (5).png',
+            'Images/image (6).jpg',
+            'Images/image (6).png',
+            'Images/image (7).jpg',
+            'Images/image (7).png',
+            'Images/image (8).jpg',
+            'Images/image (8).png',
+            'Images/image (9).jpg',
+            'Images/image (9).png'
+        ];
+
+        function showRandomImage() {
+            const randomIndex = Math.floor(Math.random() * images.length);
+            document.getElementById('randomImage').src = images[randomIndex];
+        }
+
+        // Show a random image when the page loads
+        showRandomImage();
+    </script>
+</body>
+</html>
