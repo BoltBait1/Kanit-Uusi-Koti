@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+    <style>
+        body {
+            background-color: #ff66cc;
+            background-image: url('Images/background.gif'); /* Chaotic repeating background */
+            background-repeat: repeat;
+            color: #000;
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            cursor: url('Images/custom_cursor.gif'), auto; /* Custom cursor */
+            position: relative;
+        }
+
+        h1 {
+            color: #00ff00;
+            font-size: 2em; /* Smaller font size */
+            text-shadow: 5px 5px 10px #ff0000, -5px -5px 10px #0000ff;
+            margin: 20px;
+            /* Removed animation to stop spinning */
+        }
+
+        .gif2 {
+            position: absolute;
+            top: 60%;
+            right: 0;
+            transform: translateY(-50%);
+            width: 200px;
+            height: auto;
+            animation: spin 5s infinite linear; /* Added spin animation */
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .content {
+            background-color: rgba(255, 255, 0, 0.8);
+            border: 10px dotted #ff0000;
+            padding: 20px;
+            width: 80%;
+            max-width: 800px;
+            margin: 20px auto;
+            box-shadow: 15px 15px 20px #000;
+            transform: skewX(-10deg);
+        }
+
+        .button {
+            margin: 20px;
+            display: inline-block;
+        }
+
+        a img {
+            width: 120px;
+            height: auto;
+        }
+
+        .date-button {
+            background-color: #ff00ff;
+            color: #fff;
+            font-size: 1.5em;
+            padding: 10px 20px;
+            margin: 10px;
+            border: 5px solid #00ffff;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .back-button {
+            background-color: #ff6600;
+            color: #fff;
+            font-size: 1.5em;
+            padding: 10px 20px;
+            margin: 20px;
+            border: 5px solid #000;
+            cursor: pointer;
+            text-decoration: none;
+            display: none; /* Initially hidden */
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Marquee Styling */
+        .marquee {
+            font-size: 2em;
+            color: #21201f;
+            background-color: #00ffff;
+            padding: 15px;
+            border: 5px solid #ff0000;
+            margin-bottom: 20px;
+            animation: flash 1s infinite;
+        }
+
+        @keyframes flash {
+            0% { background-color: #00ffff; }
+            50% { background-color: #ff00ff; }
+            100% { background-color: #00ffff; }
+        }
+
+        .gif-banner {
+            width: 100%;
+            max-width: 600px;
+            margin: 30px auto;
+        }
+
+        /* Adjust left image: bigger and positioned lower */
+        .gif1 {
+            position: absolute;
+            top: 60%;              /* Lower the image */
+            left: 0;               /* Stick to the left edge */
+            transform: translateY(-50%); /* Adjust for exact vertical centering */
+            width: 250px;          /* Make the image bigger */
+            height: auto;
+        }
+
+        /* Adjust right image: positioned lower */
+        .gif2 {
+            position: absolute;
+            top: 60%;              /* Lower the image */
+            right: 0;              /* Stick to the right edge */
+            transform: translateY(-50%); /* Adjust for exact vertical centering */
+            width: 200px;          /* Maintain current size */
+            height: auto;
+            animation: spin 5s infinite linear; /* Added spin animation */
+        }
+    </style>
+</head>
+<body>
+ <audio controls>
+    <source src="viva.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+    <!-- Random GIFs on the left and right -->
+    <img src="https://web.archive.org/web/20090830145808/http://geocities.com/SouthBeach/5250/msguitar.gif" 
+     alt="Floating Chaos" 
+     class="gif1">
+    <img src="https://i.imgur.com/DOeCUb.png" alt="More Chaos" class="gif2">
+
+    <!-- Blinking Header -->
+    <h1 class="blink" style="font-size: 2em;">Blog the death of god</h1>
+
+    <!-- Back to Home Button -->
+    <div style="text-align: left;">
+        <a href="index.html">
+            <img src="https://web.archive.org/web/20090821124433/http://geocities.com/Colosseum/Field/7242/Back.gif" alt="Back to Home" class="button">
+        </a>
+    </div>
+
+    <!-- Scrolling Marquee -->
+    <div class="marquee">
+        .                  ／＞--フBlog my Life and the world moveing on without people anymore
+　　　　　| 　_　 _ l
+　 　　　／` ミ＿xノ
+　　 　 /　　　 　 |
+　　　 /　 ヽ　　 ﾉ
+　／￣|　　 |　 |   |
+　| (￣ヽ＿_ヽ__) _)
+　＼二つ
+    </div>
+
+    <!-- Welcome Box -->
+    <div id="welcome-box" class="content">
+        <h2 style="color: #ff0000; text-decoration: underline; transform: rotate(-5deg);">Welcome to My Blog!</h2>
+        <p style="font-size: 1.2em; line-height: 1.8; color: #0066ff;">
+            Blog the days of life Blog the earth moving Blog the blinking of faces around me 
+        </p>
+        <p style="font-weight: bold; color: #ff00ff; transform: rotate(5deg);">
+            Select a date below to read my blog posts!
+        </p>
+    </div>
+
+    <!-- Blog Date Buttons -->
+    <div id="date-buttons">
+        <div>
+            <button class="date-button" onclick="showBlog('blog1')">December 13, 2024</button>
+            <button class="date-button" onclick="showBlog('blog2')">December 14, 2024</button>
+            <button class="date-button" onclick="showBlog('blog3')">December 15, 2024</button>
+        </div>
+    </div>
+
+    <!-- Back Button -->
+    <button class="back-button" id="back-button" onclick="showWelcome()">Back to Blog Dates</button>
+
+    <!-- Blog Content -->
+    <div id="blog1" class="content hidden">
+        <h2 style="color: #ff0000; text-decoration: underline; transform: rotate(-5deg);">December 13, 2024</h2>
+        <img src="C:\Users\caden\OneDrive\Desktop\Aritamatera\godsson.PNG" alt="Blog 1 Image" style="width: 100%; height: auto; margin: 10px 0;">
+        <p style="font-size: 1.2em; line-height: 1.8; color: #0066ff;">
+            This is the end but a start but a end in a world full of dead lives and bad lives done belive it all for it can be see first
+        </p>
+    </div>
+
+    <div id="blog2" class="content hidden">
+        <h2 style="color: #00ff00; text-decoration: underline; transform: rotate(5deg);">December 14, 2024</h2>
+        <img src="C:\Users\caden\OneDrive\Desktop\Aritamatera\goddead.PNG" alt="Blog 2 Image" style="width: 100%; height: auto; margin: 10px 0;">
+        <p style="font-size: 1.2em; line-height: 1.8; color: #ff00ff;">
+            Kill a god eat a god kill the all god hide the all god
+        </p>
+    </div>
+
+    <div id="blog3" class="content hidden">
+        <h2 style="color: #0000ff; text-decoration: underline; transform: rotate(-10deg);">December 15, 2024</h2>
+        <img src="C:\Users\caden\OneDrive\Desktop\Aritamatera\Screenshot_1.png" alt="Blog 3 Image" style="width: 100%; height: auto; margin: 10px 0;">
+        <p style="font-size: 1.2em; line-height: 1.8; color: #ff6600;">
+            He ho He ho the time is 8:17 the time is late but early to eat reddit holding lots a faces but their is a face out here that need a new face
+        </p>
+    </div>
+
+    <!-- Decorative GIF Banner -->
+    <div class="gif-banner">
+        <img src="https://web.archive.org/web/20091027075402/http://www.geocities.com/rman006/furry.gif" alt="Sparkling Banner of Doom">
+    </div>
+
+    <!-- JavaScript to Handle Blog Switching -->
+    <script>
+        function showBlog(blogId) {
+            // Hide welcome box and date buttons
+            document.getElementById('welcome-box').style.display = 'none';
+            document.getElementById('date-buttons').style.display = 'none';
+            document.getElementById('back-button').style.display = 'inline-block';
+
+            // Hide all blog content
+            const blogs = document.querySelectorAll('.content');
+            blogs.forEach(blog => blog.classList.add('hidden'));
+
+            // Show the selected blog
+            document.getElementById(blogId).classList.remove('hidden');
+        }
+
+        function showWelcome() {
+            // Show welcome box and date buttons
+            document.getElementById('welcome-box').style.display = 'block';
+            document.getElementById('date-buttons').style.display = 'block';
+            document.getElementById('back-button').style.display = 'none';
+
+            // Hide all blog content
+            const blogs = document.querySelectorAll('.content');
+            blogs.forEach(blog => blog.classList.add('hidden'));
+        }
+    </script>
+</body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Box and Submit Button</title>
+    <style>
+        body {
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            text-align: center;
+            background-color: #ff66cc;
+            color: #000;
+        }
+
+        .text-box {
+            margin: 20px;
+            padding: 10px;
+            font-size: 1.2em;
+            width: 300px;
+        }
+
+        .submit-button {
+            background-color: #00ff00;
+            color: #fff;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border: 2px solid #ff0000;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background-color: #ff0000;
+            color: #00ff00;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Text Box and Submit Button -->
+    <div>
+        <input type="text" id="textBox" class="text-box" value="Can you see god for me?">
+        <br>
+        <button class="submit-button" onclick="submitText()">Submit</button>
+    </div>
+
+    <!-- JavaScript to Handle Text Box Submission -->
+    <script>
+        function submitText() {
+            var textBox = document.getElementById("textBox");
+
+            // Replace the text in the box with "Submitted"
+            textBox.value = "Submitted";
+        }
+    </script>
+
+</body>
+</html>
