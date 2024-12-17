@@ -35,9 +35,9 @@
     }
     .gif {
       margin: 10px;
-      width: 150px; /* Adjust the width as needed */
-      height: auto; /* Maintain aspect ratio */
-      border: none; /* Remove yellow border */
+      width: 150px;
+      height: auto;
+      border: none;
     }
     .content {
       font-size: 1.2em;
@@ -46,22 +46,33 @@
       padding: 20px;
       border: 5px double #FF0000;
     }
-    .about-button {
+    .about-button-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px; /* Adds space between the buttons */
+      align-items: flex-end; /* Aligns buttons to the bottom */
       margin: 30px 0;
     }
     .about-button img {
-      width: 200px; /* Adjust button size as needed */
+      width: 200px;
       height: auto;
-      cursor: pointer; /* Change cursor to pointer on hover */
+      cursor: pointer;
+    }
+    .highlight-link {
+      color: #0000FF;
+      text-decoration: underline;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
   <h1>Jumalat taivaaseen ovat valmiita uuteen elämään</h1>
- <audio controls>
+
+  <audio controls>
     <source src="lofire.mp3" type="audio/mp3">
     Your browser does not support the audio element.
   </audio>
+
   <marquee behavior="scroll" direction="left">oletko valmis löytämään uuden elämän ja luomaan uuden jumalien perheen kanssa</marquee>
 
   <div class="gif-container">
@@ -79,7 +90,7 @@
 
   <div class="content">
     <p><strong>About This Site:</strong></p>
-    <p>sen lomakausi on täynnä toreja ja kaatuvia puita katso sisälle ja huomaa kuolleita eläimiä, kanit liikkuvat jatkuvasti, jotta ne eivät joutuisi ilmassa olevan kaltaisuuden upokkaan kiinni jumala on täällä ja haluaa nähdä auringon paistavan ylitsemme hänen vitun kuolemansa aikana. kaikki</p>
+    <p>sen lomakausi on täynnä toreja ja <a href="god sightings.html" class="highlight-link">katso sisälle ja huomaa kuolleita eläimiä</a>, kanit liikkuvat jatkuvasti, jotta ne eivät joutuisi ilmassa olevan kaltaisuuden upokkaan kiinni jumala on täällä ja haluaa nähdä auringon paistavan ylitsemme hänen vitun kuolemansa aikana. kaikki</p>
     <p><em>exploring</em></p>
   </div>
 
@@ -88,38 +99,18 @@
     <img src="https://web.archive.org/web/20090831015139/http://www.geocities.com/another_reality/images/lisapic.gif" alt="Dancing GIF">
   </div>
 
- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Images Side by Side</title>
-    <style>
-        .about-button {
-            display: inline-block;  /* Make each div act like an inline element */
-            margin: 10px;  /* Optional: adds space between the images */
-        }
-
-        .about-button img {
-            width: 200px; /* Adjust image width to make them bigger */
-            height: auto; /* Maintain aspect ratio */
-        }
-    </style>
-</head>
-<body>
+  <div class="about-button-container">
     <div class="about-button">
-        <a href="blog.html">
-            <img src="https://github.com/BoltBait1/Kanit-Uusi-Koti/blob/main/Screenshot_2.png?raw=true" alt="About Me Button">
-        </a>
+      <a href="blog.html">
+        <img src="C:\Users\caden\OneDrive\Desktop\Aritamatera\Screenshot_2.png" alt="Blog Button">
+      </a>
     </div>
     <div class="about-button">
-        <a href="about.html">
-            <img src="https://web.archive.org/web/20090829140221/http://geocities.com/cgeis4/cartoons/clickme.gif" alt="About Me Button">
-        </a>
+      <a href="about.html">
+        <img src="https://web.archive.org/web/20090829140221/http://geocities.com/cgeis4/cartoons/clickme.gif" alt="About Me Button">
+      </a>
     </div>
-</body>
-</html>
-
+  </div>
 
   <marquee behavior="alternate" direction="right">chaos</marquee>
 </body>
