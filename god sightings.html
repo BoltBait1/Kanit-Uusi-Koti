@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>God Sightings</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #000000, #330000); /* Gradient background from black to red */
+            color: #fff; /* White text to contrast with dark background */
+            font-family: 'Times New Roman', serif; /* Classic, unsettling font */
+            margin: 0;
+            padding: 0;
+            min-height: 100vh; /* Ensures the gradient covers the full page */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #ff0000; /* Red for the title */
+            font-size: 3em;
+            margin-top: 50px;
+            text-align: center;
+            text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000; /* Glowing effect */
+        }
+
+        .description {
+            font-size: 1.3em;
+            text-align: center;
+            margin: 20px auto;
+            line-height: 1.8;
+        }
+
+        /* Container for the grid */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Two columns */
+            gap: 180px 40px; /* Increased space between items, both vertically and horizontally */
+            justify-content: center;
+            margin: 40px auto;
+            max-width: 650px; /* Limit width of the grid */
+        }
+
+        /* Image container styling */
+        .image-container {
+            text-align: center;
+            width: 100%;
+            height: 300px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        /* Image styling */
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensure image fills the container without distortion */
+            border-radius: 15px; /* Rounded corners for all images */
+            transition: transform 0.3s ease-in-out; /* Smooth transition for the hover effect */
+        }
+
+        /* Hover effect for image growth */
+        .image-container img:hover {
+            transform: scale(1.1); /* Grow image slightly on hover */
+        }
+
+        /* Date and description under the image */
+        .item-text {
+            text-align: center;
+            margin-top: 20px; /* Increased space between image and text */
+        }
+
+        .date {
+            font-weight: bold;
+            color: #ff6666;
+        }
+
+        .description-text {
+            font-size: 1.1em;
+        }
+
+        /* New section for the bottom box */
+        .bottom-box {        
+            padding: 50px 0;
+            text-align: center;
+            margin-top: auto; /* Ensures it sticks to the bottom */
+        }
+
+        .bottom-box img {
+            max-width: 80%; /* Limit image width */
+            border-radius: 0; /* Remove rounded corners from the bottom image */
+        }
+
+        .bottom-box p {
+            font-size: 1.2em;
+            color: #ff6666;
+            margin-top: 20px;
+        }
+
+        /* Glitched Back Button */
+        .glitch-button-container {
+            position: absolute;
+            top: 130px; /* Adjust position to be between title and description */
+            left: calc(40% - 220px); /* Move more to the left */
+            z-index: 999;
+        }
+
+        .glitched-back-button {
+            width: 120px;
+            height: auto;
+            cursor: pointer;
+            animation: glitch 0.5s infinite alternate; /* Increase speed of glitch */
+        }
+
+        /* Glitch animation with snappy rotation */
+        @keyframes glitch {
+            0% {
+                transform: rotate(0deg);
+                filter: brightness(100%);
+            }
+            20% {
+                transform: rotate(30deg); /* Increased rotation for more intensity */
+                filter: brightness(120%);
+            }
+            40% {
+                transform: rotate(-30deg); /* Increased rotation for more intensity */
+                filter: brightness(80%);
+            }
+            60% {
+                transform: rotate(30deg); /* Snappy, quick shift */
+                filter: brightness(100%);
+            }
+            80% {
+                transform: rotate(-30deg); /* Snappy, quick shift */
+                filter: brightness(120%);
+            }
+            100% {
+                transform: rotate(0deg);
+                filter: brightness(100%);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>God Sightings</h1>
+    
+    <!-- Glitched Back Button -->
+    <div class="glitch-button-container">
+        <a href="index.html">
+            <img src="https://web.archive.org/web/20090820122714/http://geocities.com/jimmy_a_bergeron/eye.gif" class="glitched-back-button" alt="Back to Home">
+        </a>
+    </div>
+
+    <div class="description">
+        <p>not human, nor god, nor demon. Keep your eyes open.</p>
+    </div>
+
+    <!-- Grid container for images -->
+    <div class="grid-container">
+        <!-- Image 1 -->
+        <div class="image-container">
+            <a href="spoil.png" target="_blank">
+                <img src="spoil.png" alt="God Sightings 1">
+            </a>
+            <div class="item-text">
+                <p class="date">March 15, 2024</p>
+                <p class="description-text">almost mechanical.</p>
+            </div>
+        </div>
+
+        <!-- Image 2 -->
+        <div class="image-container">
+            <a href="cry.jpg" target="_blank">
+                <img src="cry.jpg" alt="God Sightings 2">
+            </a>
+            <div class="item-text">
+                <p class="date">April 7, 2024</p>
+                <p class="description-text">unsettling whispers from within.</p>
+            </div>
+        </div>
+
+        <!-- Image 3 -->
+        <div class="image-container">
+            <a href="mill.jpg" target="_blank">
+                <img src="mill.jpg" alt="God Sightings 3">
+            </a>
+            <div class="item-text">
+                <p class="date">May 2, 2024</p>
+                <p class="description-text">but the air grew cold.</p>
+            </div>
+        </div>
+
+        <!-- Image 4 -->
+        <div class="image-container">
+            <a href="helt.jpg" target="_blank">
+                <img src="helt.jpg" alt="God Sightings 4">
+            </a>
+            <div class="item-text">
+                <p class="date">June 13, 2024</p>
+                <p class="description-text">God is Here.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom box section with image and text -->
+    <div class="bottom-box">
+        <img src="https://web.archive.org/web/20090831063747/http://geocities.com/prevention_du_suicide/mheye.gif" alt="Bottom Box Image">
+        <p>The sightings continue to increase. There are whispers of something greater at play. Something that connects all these events. Keep watching.</p>
+    </div>
+
+</body>
+</html>
