@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <style>
+        body {
+            background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00, #ff0000);
+            background-size: 400% 400%;
+            animation: gradient 10s infinite;
+            color: #000;
+            font-family: "garamond", "garamond", garamond;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        h1 {
+            font-size: 4rem;
+            color: #ff0;
+            text-shadow: 2px 2px 4px #000, 0 0 20px #fff, 0 0 10px #ff0;
+            animation: blink 1s infinite alternate;
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+
+        .button {
+          
+            margin: 20px auto;
+            padding: 20px 40px;
+            background-color: #ff69b4;
+            border: 5px dashed #fff;
+           
+            color: #fff;
+            text-decoration: none;
+            box-shadow: 0 0 10px #ff69b4, 0 0 30px #ff1493;
+           
+        }
+
+      
+        }
+
+        .marquee {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            box-sizing: border-box;
+            margin: 10px 0;
+        }
+
+        .marquee span {
+            display: inline-block;
+            animation: marquee 10s linear infinite;
+            font-size: 2rem;
+            padding-left: 100%;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .animated-gif {
+            width: 20%;
+            margin: 10px auto;
+           
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .contact-form {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            border: 10px solid #ff00ff;
+            box-shadow: 0 0 20px #fff, 0 0 30px #ff00ff, 0 0 40px #ff1493;
+        }
+
+        input, textarea {
+            width: calc(100% - 20px);
+            margin: 10px 0;
+            padding: 10px;
+            border: 3px solid #ff1493;
+            font-size: 1.2rem;
+            background: #ffff00;
+            color: #000;
+        }
+
+        input[type="submit"] {
+            background: #ff69b4;
+            color: #fff;
+            font-size: 1.5rem;
+            border: 5px solid #fff;
+            cursor: pointer;
+         
+        }
+
+        @keyframes jiggle {
+            0% { transform: rotate(-3deg); }
+            100% { transform: rotate(3deg); }
+        }
+
+        input[type="submit"]:hover {
+            background: #ff1493;
+            box-shadow: 0 0 15px #fff, 0 0 30px #ff1493, 0 0 20px #ff69b4;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contact Me</h1>
+    <div class="marquee">
+        <span>Let me hear you talk to me</span>
+    </div>
+    <img src="https://i.imgur.com/Lh0Gob.png" alt="Spinning GIF" class="animated-gif">
+    <div class="contact-form">
+        <form action="#" method="POST">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="5" required></textarea><br>
+            <input type="submit" value="Send Message">
+        </form>
+    </div>
+     <div style="text-align: center;">
+        <a href="index.html">
+            <img src="https://web.archive.org/web/20090821124433/http://geocities.com/Colosseum/Field/7242/Back.gif" alt="Back to Home" class="button">
+        </a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos</title>
+    <style>
+        body {
+            background: url('https://i.imgur.com/4JvtMb.png') repeat;
+            color: #0f0;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(45deg, #ff00ff, #0000ff);
+            color: #fff;
+            text-align: center;
+            text-shadow: 2px 2px 5px #000;
+            font-size: 2.5rem;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            width: 90%;
+            margin: 20px auto;
+        }
+
+        .video-card {
+            background: #333;
+            border: 5px double #0f0;
+            box-shadow: 0 0 10px #0f0;
+            padding: 15px;
+            text-align: center;
+            position: relative;
+        }
+
+        .video-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #ff0;
+        }
+
+        .video-card video {
+            width: 100%;
+            border: 3px solid #ff0;
+        }
+
+        .random-elements {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            transform: rotate(45deg);
+            font-size: 1.2rem;
+            background-color: #ff0000;
+            color: #fff;
+            padding: 5px;
+            z-index: 10;
+        }
+
+        footer {
+            background: linear-gradient(45deg, #0000ff, #ff00ff);
+            width: 100%;
+            padding: 10px;
+            color: #fff;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        .nonsense {
+            width: 100%;
+            padding: 15px;
+            text-align: center;
+            background: rgba(255, 0, 0, 0.3);
+            color: #fff;
+            font-size: 1.3rem;
+            margin: 20px 0;
+        }
+
+        .gif-container {
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .gif-container img {
+            width: 150px;
+            margin: 0 10px;
+        }
+
+        .image-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px;
+        }
+
+        .image-buttons img {
+            width: 100px;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .image-buttons img:hover {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        My Videos Archive
+    </header>
+
+    <div class="nonsense">
+        I made theses so watch them ok
+    </div>
+
+    <div class="video-grid">
+        <div class="video-card">
+            <div class="random-elements">Hot</div>
+            <h2>Hello Kitty game</h2>
+            <video controls>
+                <source src="video 1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="video-card">
+            <h2>Minecraft Lets play ep 1</h2>
+            <video controls>
+                <source src="video 2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="video-card">
+            <div class="random-elements">New</div>
+            <h2>game</h2>
+            <video controls>
+                <source src="video 3.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <div class="gif-container">
+	<a href="index.html">
+    <img src="https://web.archive.org/web/20090806014437/http://www.geocities.com/antlersdeerfestival/buckterritory_fighting.gif" alt="Creeper GIF">
+	</a>
+    <img src="https://web.archive.org/web/20091019170715/http://www.geocities.com/roynagl/images/eye.gif" alt="Dancing Pig GIF">
+	<a href="redroom.html">
+    <img src="https://web.archive.org/web/20091027111823/http://www.geocities.com/system_sic/coalshockvidpic.gif" alt="Steve Running GIF">
+	</a>
+</div>
+
+<div class="image-buttons">
+    <!-- Button 1 - Links to page1.html -->
+    <a href="error.html">
+        <img src="https://web.archive.org/web/20091019082111/http://mx.geocities.com/aescamifime/images/arturito-clear.gif" alt="Button 1">
+    </a>
+
+    <!-- Button 2 - Links to page2.html -->
+    <a href="contact.html">
+        <img src="https://web.archive.org/web/20050401144200/http://www.geocities.com:80/ptupapers/ani_emailme.gif" alt="Button 2">
+    </a>
+</div>
+
+
+    <footer>
+        © 2000 - 2012 Fedrial Cominision of Roudomix
+    </footer>
+</body>
+</html>

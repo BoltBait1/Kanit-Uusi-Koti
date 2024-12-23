@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>287695982</title>
+    <style>
+        body {
+            background: url('https://i.imgur.com/Ib7Pvb.png') repeat;
+            background-size: wrap;
+            color: #0f0;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .center-image {
+            width: 13%; /* Keeps your original image size */
+            height: auto;
+            max-width: 100%; /* Ensures the image does not exceed screen size */
+            margin-bottom: 20px;
+        }
+
+        .code-text {
+            font-size: 1rem;
+            white-space: pre-wrap;
+            overflow: hidden;
+            max-height: 70vh;
+            overflow-y: auto;
+            width: 20%;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.8); /* Semi-transparent background for readability */
+            padding: 10px;
+            line-height: 1.5;
+            letter-spacing: 0.5px;
+        }
+
+        .random-color {
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <img src="rmag.png" alt="Creepy Image" class="center-image">
+
+    <div class="code-text" id="code-text">
+        <!-- Your existing text will be dynamically styled -->
+    </div>
+
+    <script>
+        const textElement = document.getElementById("code-text");
+        const longText = `
+            PXBZ7n3qU8 
+            YQWqLS4tr1 
+            1RpGS7T3TL 
+            EFEZoLE2b4 
+            ykGr7rXBP0
+            CXspyeKYzE 
+            aWt29vRKAB 
+            ZZrrhBf3yR
+        `;
+
+        // Function to generate random color
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        // Loop through each letter and apply random color
+        for (let char of longText) {
+            const span = document.createElement("span");
+            span.textContent = char;
+            if (char !== '\n') {
+                span.style.color = getRandomColor();
+            }
+            span.classList.add("random-color");
+            textElement.appendChild(span);
+        }
+    </script>
+</body>
+</html>

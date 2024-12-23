@@ -1,0 +1,59 @@
+<!-- Error Page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error 3534536573</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #f00;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 10px #ff0000;
+        }
+        p {
+            font-size: 1.2rem;
+            margin: 20px 0;
+        }
+        .glitch {
+            color: #0f0;
+            font-size: 2rem;
+            animation: glitch 1.5s infinite;
+        }
+        @keyframes glitch {
+            0% { text-shadow: 2px 2px #f00; }
+            25% { text-shadow: -2px -2px #00f; }
+            50% { text-shadow: 2px -2px #ff0; }
+            75% { text-shadow: -2px 2px #0f0; }
+            100% { text-shadow: 2px 2px #f00; }
+        }
+        .links {
+            margin: 20px;
+        }
+        .links a {
+            color: #ff0;
+            text-decoration: none;
+            font-size: 1.5rem;
+            display: block;
+            margin: 10px 0;
+        }
+        .links a:hover {
+            color: #0ff;
+        }
+    </style>
+</head>
+<body>
+    <h1>ERROR 404</h1>
+    <p class="glitch">0x000000ED (0x80F128D0, 0x0000009c, 0x00000000, 0x0000000)</p>
+    <div class="links">
+        <a href="index.html">Return to the Homepage</a>
+        <a href="#" onclick="alert('I cant help');">Help</a>
+    </div>
+</body>
+</html>
