@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comic 1</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        #comic-container {
+            position: relative;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 800px;
+        }
+
+        #comic-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border: 5px solid white;
+            position: relative; /* For jitter effect */
+        }
+
+        #comic-image.large {
+            width: 150%; /* Increase size for specific images */
+            border: none; /* Remove border */
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .nav-buttons button {
+            background-color: #444;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            margin: 0 10px;
+            cursor: pointer;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+            text-transform: uppercase;
+        }
+
+        .nav-buttons button:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .nav-buttons button:disabled {
+            background-color: #222;
+            color: #555;
+            cursor: not-allowed;
+        }
+
+        #scary-text {
+            color: red;
+            font-size: 2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            visibility: hidden;
+        }
+
+        .freak-out {
+            animation: freakOut 0.1s infinite;
+        }
+
+        @keyframes freakOut {
+            0% { background-color: red; color: yellow; }
+            25% { background-color: yellow; color: blue; }
+            50% { background-color: green; color: white; }
+            75% { background-color: purple; color: orange; }
+            100% { background-color: blue; color: red; }
+        }
+
+        .jitter {
+            animation: jitter 0.05s infinite;
+        }
+
+        @keyframes jitter {
+            0% { transform: translate(0, 0); }
+            25% { transform: translate(-5px, 3px); }
+            50% { transform: translate(4px, -3px); }
+            75% { transform: translate(-3px, -4px); }
+            100% { transform: translate(3px, 5px); }
+        }
+    </style>
+</head>
+<body>
+    <div id="comic-container">
+        <div id="scary-text">Warning</div>
+        <img id="comic-image" src="1.png" alt="Comic Panel">
+    </div>
+
+    <div class="nav-buttons">
+        <button id="prev-button" onclick="prevPanel()">Previous</button>
+        <button onclick="window.location.href='index.html'">Home</button>
+        <button id="next-button" onclick="nextPanel()">Next</button>
+    </div>
+
+    <script>
+        const totalPanels = 18; // Total number of comic panels
+        let currentPanel = 1; // Start with the first panel
+        let scaryInterval;
+        let buttonIntervals = []; // To track button text intervals
+        const scaryText = document.getElementById("scary-text");
+        const comicImage = document.getElementById("comic-image");
+        const prevButton = document.getElementById("prev-button");
+        const nextButton = document.getElementById("next-button");
+        const navButtons = document.querySelectorAll(".nav-buttons button");
+
+        function updateComic() {
+            comicImage.src = `${currentPanel}.png`;
+
+            // Check if we are on panel 15
+            if (currentPanel === 15) {
+                startFreakOut();
+            } else {
+                stopFreakOut();
+            }
+
+            // Adjust style for specific images
+            if (currentPanel >= 8 && currentPanel <= 15) {
+                comicImage.classList.add("large");
+            } else {
+                comicImage.classList.remove("large");
+            }
+
+            // Disable buttons at the beginning and end
+            prevButton.disabled = currentPanel === 1;
+            nextButton.disabled = currentPanel === totalPanels;
+        }
+
+        function prevPanel() {
+            if (currentPanel > 1) {
+                currentPanel--;
+                updateComic();
+            }
+        }
+
+        function nextPanel() {
+            if (currentPanel < totalPanels) {
+                currentPanel++;
+                updateComic();
+            }
+        }
+
+        function startFreakOut() {
+            // Show scary text and make it loop through words
+            scaryText.style.visibility = "visible";
+            let words = ["COVER", "SPREAD", "CORPSE"];
+            let index = 0;
+            scaryInterval = setInterval(() => {
+                scaryText.textContent = words[index];
+                index = (index + 1) % words.length;
+            }, 100);
+
+            // Add jitter effect to the image
+            comicImage.classList.add("jitter");
+
+            // Add freak-out effect to buttons
+            let buttonWords = [
+                ["FUCK", "DEAD", "SEX THING"],
+                ["FUCK", "ROTTING", "BLOOD"],
+                ["FUCK", "KILLER", "GONE"]
+            ];
+
+            navButtons.forEach((button, i) => {
+                button.classList.add("freak-out");
+                let buttonIndex = 0;
+
+                // Start a new interval for each button and store it in the array
+                const interval = setInterval(() => {
+                    button.textContent = buttonWords[i][buttonIndex];
+                    buttonIndex = (buttonIndex + 1) % buttonWords[i].length;
+                }, 200);
+
+                buttonIntervals.push(interval); // Store interval
+            });
+        }
+
+        function stopFreakOut() {
+            // Hide scary text
+            scaryText.style.visibility = "hidden";
+            clearInterval(scaryInterval);
+
+            // Remove jitter effect from the image
+            comicImage.classList.remove("jitter");
+
+            // Remove freak-out effect from buttons and reset text
+            navButtons.forEach((button, i) => {
+                button.classList.remove("freak-out");
+                button.textContent = i === 0 ? "Previous" : i === 1 ? "Home" : "Next";
+            });
+
+            // Clear all button text-changing intervals
+            buttonIntervals.forEach(clearInterval);
+            buttonIntervals = []; // Reset array
+        }
+
+        // Initial update
+        updateComic();
+    </script>
+</body>
+</html>
